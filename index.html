@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyword Conversion</title>
+</head>
+<body>
+    <h1>Convert Keywords</h1>
+    <textarea id="inputKeywords" rows="5" cols="50" placeholder="Enter keywords separated by newlines"></textarea>
+    <button onclick="convertKeywords()">Convert</button>
+    <br>
+    <h2>Converted Keywords</h2>
+    <pre id="outputKeywords"></pre>
+
+    <script>
+        function convertKeywords() {
+            const inputText = document.getElementById("inputKeywords").value;
+            const keywordsArray = inputText.split('\n');
+            const convertedKeywords = keywordsArray.map(keyword => keyword.trim().replace(/ /g, '_')).join('\n');
+
+            document.getElementById("outputKeywords").textContent = convertedKeywords;
+        }
+    </script>
+</body>
+</html>
